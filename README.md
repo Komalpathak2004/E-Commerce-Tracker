@@ -3,7 +3,7 @@
 E-commerce Tracker is a browser extension that automatically tracks products added to the user's wishlist and cart across multiple e-commerce platforms such as Amazon and Myntra. It provides detailed insights into user browsing habits and helps users manage their online shopping more efficiently.
 
 ## 📸 Demo
-<img src="./public/demoimage.png" alt="logo" width=1710 height=400 />
+<img src="demoimage.png" alt="logo" width=1710 height=400 />
 
 ## ✨ Features
 
