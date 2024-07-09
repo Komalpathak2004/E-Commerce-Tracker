@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracked Items</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      padding: 20px; 
+      background-color: #f3f4f6; 
+      color: #333; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      margin: 0; 
+    }
+    .container { 
+      max-width: 600px; 
+      width: 100%; 
+      background-color: #fff; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+      border-radius: 10px; 
+      padding: 20px; 
+      box-sizing: border-box; 
+      animation: fadeIn 1s ease-in-out;
+    }
+    h2 { 
+      font-size: 28px; 
+      margin-bottom: 20px; 
+      color: #2c3e50; 
+      text-align: center; 
+      animation: slideDown 1s ease-in-out;
+    }
+    ol { 
+      padding-left: 20px; 
+      margin: 0; 
+    }
+    li { 
+      margin-bottom: 15px; 
+      padding: 15px; 
+      background-color: #f9f9f9; 
+      border: 1px solid #e1e1e1; 
+      border-radius: 8px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+      counter-increment: item; 
+      position: relative; 
+      animation: slideIn 0.5s ease-in-out;
+    }
+    li::before { 
+      content: counter(item) ". "; 
+      font-weight: 700; 
+      color: #2c3e50; 
+      position: absolute; 
+      left: -30px; 
+    }
+    li:hover { 
+      transform: scale(1.05); 
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+      background-color: #eef2f7;
+    }
+    .item-name { 
+      font-size: 18px; 
+      font-weight: 500; 
+      color: #34495e; 
+    }
+    .item-price { 
+      font-size: 16px; 
+      font-weight: 700; 
+      color: #27ae60; 
+    }
+    .delete-button {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .delete-button:hover {
+      background-color: #c0392b;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-20px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Tracked Items</h2>
+    <ol id="tracked-items-list">
+      <!-- Tracked items will be dynamically added here -->
+    </ol>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

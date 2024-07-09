@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "E-commerce Tracker",
+  "version": "1.0",
+  "description": "Track products added to cart and wishlist across multiple e-commerce platforms.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "webNavigation",
+    "tabs",
+    "https://www.amazon.in/*",
+    "https://aax-eu.amazon-adsystem.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.in/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
